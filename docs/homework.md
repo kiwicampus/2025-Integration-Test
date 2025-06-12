@@ -149,41 +149,6 @@ For extra homework you should create a new branch from the developed one when yo
 5. **[+10%/5.0]**: Implements the rosbag_player
 5. **[+40%/5.0]**: Implement unit test for your fail detector node, it must be executed using `colcon test`, use the rosbags to feed the node subscribers.
 
-Only if you made the interfaces node bonus point
-
-6. **[+10%/5.0]:** Play a sound if a collision or rollover is detected.
-7. **[+10%/5.0]:** Make that Kiwibot track2.wav don't get distorted. Use: `ros2 topic pub -1 /device/speaker/command std_msgs/Int8 "data: 2"`
-
-## *C++ Bonus Points* [+40%/5.0]
-
-### Interfaces
-
-This node is shown as **interfaces**. It is in charge of:
-
-* Perform control of **__Physical Devices__** used by the Project (audio).
-* Play an ambient sound when the stack is running
-* Play sounds according to some events
-
-First, you need to modify [nodes_launch.sh](/rover/configs/nodes_launch.sh) file to build the `interfaces` node. 
-
-Don't worry the C++ node will fail when you try to compile, but that is part of the below exercises. Remember, if you won't use a node deactivate setting 0.
-
-1. Identify the `NODE_INTERFACES` object on the [nodes_launch.sh](/rover/configs/nodes_launch.sh) file: 
-
-    ```.sh
-    export NODE_INTERFACES=0 # interfaces skip:0
-    ```
-
-2.  **Create a subscriber inside the speaker node** - package: [`interfaces`](../rover/ros2/src/interfaces) file to modify: `interfaces/src/modules/speaker.cpp` -> Implement a subscriber `Amazing Speaker Subscriber` type: `std_msgs::msg::Int8` related to the CallBack Function `speakerCb`, the publisher come from `node_robotics` and publish a Int8 message to indicated which track will play. **Note:** Use the `m_speaker_sub` defined in the `.hpp` file to create your subscriber.
-
-3. **Create a publisher inside the speaker node** - package: [`interfaces`](../rover/ros2/src/interfaces) file to modify: `interfaces/src/modules/speaker.hpp` -> Define a publisher `Amazing Speaker Publisher` type: `std_msgs::msg::Bool` call it ```m_done_pub```. 
-
-4. **Publish a Bool message using the previous publisher created** - package: [`interfaces`](../rover/ros2/src/interfaces) file to modify: `interfaces/src/modules/speaker.cpp` -> Use the documentation provided and your logic to discover how to publish a UniquePtr message in a simple publisher, which publish a True value each time a sound is ended and False each time a sound begin. Use the publisher called `m_done_pub`.
-
-5. **Create a condition when a file isn't found** - package: [`interfaces`](../rover/ros2/src/interfaces) file to modify: `interfaces/src/modules/speaker.cpp` -> When a soundtrack isn't found, play the default sound called `track2` located in the same folder as the another ones. You could test this point using `ros2 topic pub -1 /device/speaker/command std_msgs/Int8 "data: 2"`.
-
-Total possible Extra points: 122% -> 5.0. Maximum total grade: 11.22/5.0. Complete the point it doesn't mean you have 5.0, you have at least 3.0 but for the rest of the grade will evaluate the performance and the beauty of your solution. To complete these points, probably you will have to modify messages, services, or even create new ones, also topics subscribers and publishers, maybe services, who knows :smile:
-
 ---
 
 <p align="center">

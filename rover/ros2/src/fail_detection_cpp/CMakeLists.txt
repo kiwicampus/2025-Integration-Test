@@ -61,12 +61,21 @@ install(TARGETS fail_detection_node
 
 if(BUILD_TESTING)
   find_package(ament_cmake_gtest REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # uncomment the line when a copyright and license is not present in all source files
-  #set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # uncomment the line when this package is not in a git repo
-  #set(ament_cmake_cpplint_FOUND TRUE)
+  find_package(cmr_tests_utils REQUIRED)
+  find_package(rosbag_player REQUIRED)
+  
+  set(TESTFILES
+    test/fail_detection_test.cpp
+  )
+  ament_add_gtest(${PROJECT_NAME}_test ${TESTFILES} TIMEOUT 120)
+  target_link_libraries(${PROJECT_NAME}_test fail_detection rosbag_player::rosbag_player)
+
+  ament_target_dependencies(${PROJECT_NAME}_test ${DEPENDENCIES} cmr_tests_utils rosbag_player)
+
+  install(TARGETS 
+    ${PROJECT_NAME}_test
+    DESTINATION lib/${PROJECT_NAME}
+  )
 endif()
 
 ament_package()

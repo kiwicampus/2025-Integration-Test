@@ -7,11 +7,11 @@ RosBagPlayer::RosBagPlayer(const std::string& rosbag_path) : rosbag_path_(rosbag
     // TODO: implement an exception when the file does not exist
 }
 
-void RosBagPlayer::play(PlayOptions options)
+void RosBagPlayer::play(PlayOptions const& options)
 {
     // Start a thread to play the bag file
     
-    // TODO: implement the play function, define default values if you want
+    // TODO: implement the play function
     throw std::logic_error("Not implemented");
 }
 

@@ -33,13 +33,6 @@ void splitString(const std::string& str, const char delimiter, std::vector<std::
     substrings.push_back(substring);
 }
 
-
-extern std::chrono::nanoseconds headers2Dt(const std_msgs::msg::Header& header1, const std_msgs::msg::Header& header2)
-{
-    auto dt_ns = (rclcpp::Time(header1.stamp) - rclcpp::Time(header2.stamp)).nanoseconds();
-    return std::chrono::nanoseconds(dt_ns);
-}
-
 extern float variance(const std::vector<float>& vec, int offset)
 {
     float mean = 0, M2 = 0, variance = 0;

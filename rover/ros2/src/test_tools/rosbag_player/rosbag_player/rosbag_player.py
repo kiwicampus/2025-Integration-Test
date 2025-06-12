@@ -18,16 +18,16 @@ class RosBagPlayer:
         # topics: topics to publish
         # start_time: start time offset in seconds
         # duration: play duration in seconds
-        
+
         # TODO: implement the play function, define default values if you want
         raise NotImplementedError()
 
     def join(self):
-        #TODO:
+        # TODO:
         # Wait until the ros bag end
         raise NotImplementedError()
 
     def stop(self):
-        # TODO: 
+        # TODO:
         # Stop the bag player thread
         raise NotImplementedError()

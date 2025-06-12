@@ -8,8 +8,13 @@ from rclpy.node import Node
 
 
 def test_rosbag_player():
-    player = RosBagPlayer("gs://autonomy-vision/rosbags/test_bag/test_bag_0.mcap")
-    assert os.path.isfile(player.local_path), "file was not downloaded"
+    try:
+        player = RosBagPlayer("/workspace/rosbags/does_not_exist.mcap")
+        assert False, "This should rise and exception"
+    except Exception as e:
+        print(str(e), flush=True)
+
+    player = RosBagPlayer("/workspace/rosbags/test_bag.mcap")
 
     player.play()
 

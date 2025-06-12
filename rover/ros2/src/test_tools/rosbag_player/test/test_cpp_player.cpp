@@ -4,12 +4,18 @@
 
 TEST(rosbag_player, rosbag_player)
 {
-    auto rosbag_player = RosBagPlayer("gs://autonomy-vision/rosbags/test_bag/test_bag_0.mcap");
+    try{
+        auto dummy_rosbag_player = rosbag_player::RosBagPlayer("/workspace/rosbags/does_not_exist.mcap");
+        FAIL() << "This should rise and exception.";
+    }
+    catch (std::logic_error e){
+        std::cout << "Good Job\n";
+    }
+    auto rosbag_player = rosbag_player::RosBagPlayer("/workspace/rosbags/test_bag.mcap");
 
-    std::filesystem::path path(rosbag_player.get_local_path());
-    EXPECT_TRUE(std::filesystem::exists(path));
-
-    rosbag_player.play();
+    rosbag_player::PlayOptions options;
+    // TODO: populate the options
+    rosbag_player.play(options);
     std::this_thread::sleep_for(std::chrono::seconds(1));
 
     rclcpp::init(0, nullptr);

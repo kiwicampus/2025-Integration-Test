@@ -17,6 +17,9 @@
   <depend>utils</depend>
   <depend>tf2</depend>
 
+  <test_depend>cmr_tests_utils</test_depend>
+  <test_depend>rosbag_player</test_depend>
+
   <export>
     <build_type>ament_cmake</build_type>
   </export>

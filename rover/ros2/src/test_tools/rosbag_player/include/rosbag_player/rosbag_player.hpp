@@ -10,7 +10,7 @@
 
 namespace rosbag_player{
 
-// Modify tis struct if you want
+// Modify tis struct if you want, as defining default values
 struct PlayOptions{
     float start_time;                // start time offset in seconds
     float duration;                  // play duration in seconds
@@ -27,7 +27,7 @@ class RosBagPlayer
     /*!
     Start a thread to play the bag file
     */
-    void play();
+    void play(PlayOptions const& options);
 
     /*!
     stop bag play

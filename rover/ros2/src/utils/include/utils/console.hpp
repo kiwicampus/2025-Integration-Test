@@ -19,7 +19,6 @@
 #include <string>
 #include <vector>
 #include "rclcpp/time.hpp"
-#include "std_msgs/msg/header.hpp"
 
 #include "utils/string_utils.hpp"
 
@@ -80,9 +79,6 @@ std::vector<T> getEnv(const char* var, const std::initializer_list<T>& default_v
 }
 
 std::vector<std::string> getEnv(const char* var, const std::initializer_list<const char*>& default_var);
-
-/* Header operations Functions */
-extern std::chrono::nanoseconds headers2Dt(const std_msgs::msg::Header& header1, const std_msgs::msg::Header& header2);
 
 /* Statistical functions */
 extern float variance(const std::vector<float>& vec, int offset);

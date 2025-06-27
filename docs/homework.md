@@ -11,7 +11,7 @@ NAME: **WRITE YOUR NAME HERE**
 3. Every time that you complete a basic point create a commit, add the files and push with the next format description: `[FEAT]: description of what you did`. See the [conventions.md](./conventions.md) file for more details.
 4. You can do your last commit and push until and before the deadline (date & time) if you do more after, we will make a reverse of your code until the last commit before the dead-line date-time (If the project is not complete there, it'll be rejected).
 5. Remember partial solutions will be no accepted, you have to complete at least **BASIC POINTS**, **Questionnaire**, but we consider the real project the **EXTRA-HOMEWORK** session (Without it your chances will be less).
-6. Rosbag's are located in [Drive](https://drive.google.com/drive/folders/1xMR8ObD-Jt19MIGLF3YgpQJIerUfpXvC?usp=sharing) please download them and save them into the [rosbags folder](/rosbags). You should source `. /opt/ros/iron/setup.bash` and `. /workspace/rover/ros2/install/setup.bash` in order to be able to check all the topics. 
+6. We send you the rosbags download link with the email you have received to solve this project, please download them and save them into the [rosbags folder](/rosbags). You should source `. /opt/ros/iron/setup.bash` and `. /workspace/rover/ros2/install/setup.bash` in order to be able to check all the topics. 
 
 <span style="color:red;font-weight: bold;"> By downloading the rosbags, you agree not to share them and to remove them from any device once the test is finished.</span>
 
@@ -41,9 +41,9 @@ koda@airobotics:/workspace$ bash scripts/startRobotics.sh
 
 ## *Debug and diagnose*
 
-One of the main habilities that you should have is to debug and diagnose the system. Some times the robot has some unexpected behaviors, or edge cases we need to consider. In order to solve this kind of issues, you should know how to use the tools that ROS2 provides you.
+One of the main abilities that you should have is to debug and diagnose the system. Some times the robot has some unexpected behaviors, or edge cases we need to consider. In order to solve this kind of issues, you should know how to use the tools that ROS2 provides you.
 
-We are providing you several [rosbags](https://drive.google.com/drive/u/0/folders/1xMR8ObD-Jt19MIGLF3YgpQJIerUfpXvC) with different scenarios that you should analyze and understand what is happening in each one of them. Do not worry, the integrity of the robots was not compromised, and the current stack will prevent similar accidents.😉
+We are providing you several rosbags with different scenarios that you should analyze and understand what is happening in each one of them. Do not worry, the integrity of the robots was not compromised, and the current stack will prevent similar accidents.😉
 
 **The input topics will be supplied by the `rosbag`'s. Such as:**
 

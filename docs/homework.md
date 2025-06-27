@@ -87,10 +87,10 @@ First, you need to modify [nodes_launch.sh](/rover/configs/nodes_launch.sh) file
   export NODE_FAIL_DETECTION_PY=0 # fail_detection_py skip:0
   ```
 
-  You are free to chose if work with the c++ or the python version, but cpp option include a bonus in your score! 🎁
+  You are free to chose if work with the c++ or the python version, but cpp option includes a bonus in your score! 🎁
 
-2. Implement a collition detector in your `fail_detection` node. The provided skeleton already implements all subscribers you will need. Publish the accident in the topic `/fail_detection/fail`
-3. rosbags `rosx.mcap_x.mcap` have real cases of collitions, use them to test your solution.
+2. Implement a collition detector in your `fail_detection` node. The provided skeleton already implements all subscribers you might need (you are free to add more). Publish the accident in the topic `/fail_detection/fail`
+3. rosbags `bagx_0.mcap` have real cases of collitions, use them to test your solution.
 
 ---
 **REMEMBER**: 

@@ -37,18 +37,14 @@ void FailDetector::ImuCb(sensor_msgs::msg::Imu::SharedPtr msg)
     // Camera imu is not aligned with the robot base link frame but is published in a big rate
 
     // TODO:
-    // Detect rollovers
+    // Detect collitions
 }
 
 void FailDetector::ChassisImuCb(sensor_msgs::msg::Imu::SharedPtr msg)
 {
-    tf2::Quaternion quat(tf2Scalar(msg->orientation.x), tf2Scalar(msg->orientation.y), tf2Scalar(msg->orientation.z),
-                         tf2Scalar(msg->orientation.w));
-
     // Chassis Imu is aligned with the robot base link frame
     // TODO:
-    // Detect rollovers
-    double roll, pitch, yaw;
+    // Detect collitions
 }
 
 void FailDetector::BotSpeedCb(nav_msgs::msg::Odometry::SharedPtr msg)

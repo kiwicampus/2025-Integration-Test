@@ -65,7 +65,7 @@ Now, what easy way to analyze the topics? Kiwibot is here for you! We developed 
   3. Open the foxglove tab and locally play the rosbag you are interested in.
   4. Navigate through the topics and try to understand the data.
 
-  5. Answer the following questions using the diagnostic rosbag you have:
+  5. Answer the following questions using the diagnostic_0.mcap rosbag you have:
 
   Our team-mates reported something weird about a robot. According to the robotics-supervisor, the robot just stopped and did not want to continue navigating, even though it moved without control and almost chased. They provided you with the necessary rosbag with the topics to debug the problem and give them a quick response. They need to know: 
 
@@ -89,13 +89,8 @@ First, you need to modify [nodes_launch.sh](/rover/configs/nodes_launch.sh) file
 
   You are free to chose if work with the c++ or the python version, but cpp option include a bonus in your score! 🎁
 
-2. Implement a rollover detector in your `fail_detection` node. The provided skeleton already implements all subscribers you will need. Publish the accident in the topic `/fail_detection/fail`
-3. rosbags `rosx.mcap_x.mcap` have real cases of rollovers, use them to test your solution.
-
-## Rosbags Player
-
-1. Implements the rosbag_player, cpp or python version the same version that the fail_detection package.
-1. Create an unit tests for your fail_detection node using the rosbag_player utility.
+2. Implement a collition detector in your `fail_detection` node. The provided skeleton already implements all subscribers you will need. Publish the accident in the topic `/fail_detection/fail`
+3. rosbags `rosx.mcap_x.mcap` have real cases of collitions, use them to test your solution.
 
 ---
 **REMEMBER**: 

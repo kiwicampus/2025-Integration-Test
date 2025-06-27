@@ -6,7 +6,6 @@ import time
 import rclpy
 from rclpy.node import Node
 from rclpy.qos import QoSProfile, QoSDurabilityPolicy
-from tf_transformations import euler_from_quaternion
 from std_msgs.msg import Header
 from sensor_msgs.msg import Imu
 from nav_msgs.msg import Odometry
@@ -70,19 +69,13 @@ class FailDetector(Node):
     def imu_cb(self, msg: Imu) -> None:
         """Receive the imu msg and process it to detect collisions"""
         # TODO:
-        # Detect rollovers
+        # Detect collitions
 
     def chassis_imu_cb(self, msg: Imu) -> None:
         """Receive the chassis imu msg and process it to detect pitch changes"""
-        quat = (
-            msg.orientation.x,
-            msg.orientation.y,
-            msg.orientation.z,
-            msg.orientation.w,
-        )
         # Chassis Imu is aligned with the robot base link frame
         # TODO:
-        # Detect rollovers
+        # Detect collitions
 
     def bot_speed_cb(self, msg: Odometry) -> None:
         """Receive the speed command of the robot to know if its going forward or backwards"""

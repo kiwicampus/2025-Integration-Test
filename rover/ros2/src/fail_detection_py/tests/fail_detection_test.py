@@ -9,7 +9,7 @@ def verify_fail(fails_msg: Fails, fail_event: str) -> bool:
     return any(fails_msg.fails, lambda fail: fail == fail_event)
 
 
-def test_extern_param():
+def test_collition():
     rclpy.init()
 
     spinner = TestSpinner()
@@ -28,7 +28,7 @@ def test_extern_param():
 
     fails_msg = sub_fails.get_received_msg().data
     assert verify_fail(
-        fails_msg, Fail.EVENT_ROLLOVER
-    ), "Rollover event should be detected"
+        fails_msg, Fail.EVENT_COLLISION
+    ), "Collition event should be detected"
     # TODO: Can you test several case in a single test function?
     rclpy.shutdown()

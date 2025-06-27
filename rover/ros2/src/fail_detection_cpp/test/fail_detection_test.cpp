@@ -17,7 +17,7 @@ bool verify_fail(usr_msgs::msg::Fails fails_msg, std::string fail_event)
     return false;
 }
 
-TEST(Fail_detection, test_rollover)
+TEST(Fail_detection, test_collition)
 {
     setenv("ROS_DOMAIN_ID", "2", 1);
     auto rosbag_player = rosbag_player::RosBagPlayer("TODO: your bag path");
@@ -40,8 +40,8 @@ TEST(Fail_detection, test_rollover)
     rosbag_player.play(play_options);
     rosbag_player.join();
 
-    bool some_rollover = verify_fail(sub_fails->get_received_msg(), usr_msgs::msg::Fail::EVENT_ROLLOVER);
-    EXPECT_TRUE(some_rollover) << "Rollover event should be detected";
+    bool some_collition = verify_fail(sub_fails->get_received_msg(), usr_msgs::msg::Fail::EVENT_COLLISION);
+    EXPECT_TRUE(some_collition) << "Collition event should be detected";
 
     // TODO: Can you test several case in a single test function?
     rclcpp::shutdown();

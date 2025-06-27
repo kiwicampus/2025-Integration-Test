@@ -22,6 +22,8 @@ Kiwibot Cargo | Kiwibot Advertisement | Kiwibot Leap
 # **Project Description**
 This project is a simply dev-container to read previous recorded `ros2 bag` and perform actions over the published topics. You'll get some `ros2 bag` and the code-bone of some nodes that you'll complete in order to achieve some specific task. This project is to validate the knowledge of new candidates which are applying for a roll in the AI&Robotics team, we'll evaluate concepts and basics of ROS2, docker, Python, C++, Git, LinuxOS, programming order and style, among others.
 
+<span style="color:red;font-weight: bold;"> By downloading the rosbags, you agree not to share them and to remove them from any device once the test is finished.</span>
+
 <br />
 
 ---
